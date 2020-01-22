@@ -1,7 +1,7 @@
 // let alias = require('./webpack.alias.js');
 
 module.exports = {
-    presets: ['@babel/preset-react', '@babel/preset-env', 'mobx'],
+    presets: ['@babel/preset-react', '@babel/preset-env'],
     plugins: [
         // Stage 0
         '@babel/plugin-proposal-function-bind',

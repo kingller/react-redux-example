@@ -1,9 +1,8 @@
 // let alias = require('./webpack.alias.js');
 
 module.exports = {
-    presets: ['@babel/preset-typescript', '@babel/preset-react', '@babel/preset-env', 'mobx'],
+    presets: ['@babel/preset-react', '@babel/preset-env', 'mobx'],
     plugins: [
-        ['@babel/plugin-transform-typescript', { allowNamespaces: true }],
         // Stage 0
         '@babel/plugin-proposal-function-bind',
 

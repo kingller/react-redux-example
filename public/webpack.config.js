@@ -32,6 +32,17 @@ let config = {
             {
                 test: /\.tsx?$/,
                 loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-typescript'],
+                    plugins: [['@babel/plugin-transform-typescript', { allowNamespaces: true }]],
+                },
+                include: [
+                    path.resolve(__dirname, 'src'),
+                ],
+            },
+            {
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
                 include: [
                     path.resolve(__dirname, 'src'),
                 ],
@@ -95,7 +106,7 @@ let config = {
     },
     resolve: {
         alias: require('./webpack.alias.js'),
-        extensions: ['.js', '.ts', '.tsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
     plugins: [
         new CleanWebpackPlugin([target]),
@@ -143,7 +154,7 @@ let config = {
 function addEntries() {
     let pages = require('./pages.js');
     pages.forEach(function (page) {
-        config.entry[page.name] = [`${ROOT_PATH}/src/${page.name}.tsx`];
+        config.entry[page.name] = [`${ROOT_PATH}/src/${page.name}.jsx`];
         let plugin = new HtmlWebpackPlugin({
             filename: `${page.name}.html`,
             template: `${ROOT_PATH}/template.ejs`,

@@ -6,7 +6,7 @@ import history from './js/hash-history';
 
 import ModuleWrapper from './components/module-wrapper';
 
-import Main from './modules/main';
+import Main from './modules/to-do-app/main';
 
 const Root = ({ store }) => {
     return (
